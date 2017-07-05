@@ -49,6 +49,10 @@
  * (new1分支) git commit -a -m "" 添加到new1分支版本库
  * git checkout master (切换到主分支master)
  * git merge +(需要合并的分支名)  master指针指向分支
+ * git branch --merged 当前的分支所合并的分支
+ * git branch --no-merged 当前的分支没有合并的分支
+ * git branch -d (分支名) 删除与master合并的指定分支
+ * git branch -D (分支名) 强制删除指定分支
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
