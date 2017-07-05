@@ -2,7 +2,7 @@
  * git config user.name 设置用户名
  * git config user.email 设置邮箱
  * git status 查看状态
- * git log 查看提交记录
+ * git log 查看提交记录 （q还原）
  * git clone +url 克隆地址信息
  * git add +文件名 指定文件上传至暂存区
  * git add . 所有文件上传暂存区
