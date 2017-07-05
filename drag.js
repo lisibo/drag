@@ -20,9 +20,11 @@
  * git reset --hard HEAD^ 还原最新版本的前一个版本，内容会改变
  * git reset --hard HEAD`n 还原当前版本的前几个版本,内容会改变
  * git reflog 查看所有未来的commit号，可以通过 git reset --hard +(commit号) 回到新版本
+ * （上传到远程仓库系列）
  * git remote 查询远程仓库的名字（默认origin）
  * git remote add 修改远程仓库的名字
- * 
+ * git remote -v 查询远程仓库的地址
+ * git push (仓库名/origin) (哪个分支/master) 将内容同步到github远程仓库
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
