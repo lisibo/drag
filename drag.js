@@ -20,6 +20,7 @@
  * git reset --hard HEAD^ 还原最新版本的前一个版本，内容会改变
  * git reset --hard HEAD`n 还原当前版本的前几个版本,内容会改变
  * git reflog 查看所有未来的commit号，可以通过 git reset --hard +(commit号) 回到新版本
+ * （上传到远程仓库系列）
  * git remote 查询远程仓库的名字（默认origin）
  * git remote add 修改远程仓库的名字
  * git remote -v 查看远程仓库网址
