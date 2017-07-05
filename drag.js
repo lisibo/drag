@@ -25,6 +25,11 @@
  * git remote add 修改远程仓库的名字
  * git remote -v 查看远程仓库网址
  * git push （远程仓库名字/origin） （哪个分支/master）从本地上传到github网站
+ * (解决冲突)
+ * git diff master origin/master 查看冲突
+ * git merge origin/master 手动解决冲突
+ * git commit -a -m "注释" 提交版本库
+ * git push origin master 上传远程仓库
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
