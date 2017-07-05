@@ -7,14 +7,17 @@
  * git add +文件名 指定文件上传至暂存区
  * git add . 所有文件上传暂存区
  * git commit -m "注释" （暂存区提交到版本库）
- * git commit （文件名） -m "注释" （暂存区提交到版本库）
- * git commit -a -m “注释” 工作区上传的版本库
+ * git commit （文件名） -m "注释" （指定暂存区提交到版本库）
+ * git commit -a -m “注释” 工作区所有内容上传的版本库
  * git reset HEAD +文件名 指定文件从暂存区返回工作区
  * git reset HEAD . 所有文件从暂存区返回工作区
- * git checkout -- 文件名 （工作区内容依次从暂存区还原内容，暂存区没有内容直接还原版本区内容）
  * git rm +文件名 可以把暂存区的文件删除（工作区有这个文件则删除不掉）
  * git rm -f +文件名 （可以删除暂存区文件，工作区有内容也会被一起删除）
  * git rm --cached +文件名 （可以删除暂存区文件，工作区有内容不会被一起删除，会保留）
+ * git checkout -- 文件名 （工作区内容依次从暂存区还原内容，暂存区没有内容则直接还原版本区内容）
+ * git checkout （commit号） +文件名   误删后还原指定版本的文件
+ * git reset --hard （commit号） 还原版本 
+ * 
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
