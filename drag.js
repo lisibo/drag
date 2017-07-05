@@ -9,6 +9,7 @@
  * git commit -a -m “注释” 工作区上传的版本库
  * git reset HEAD +文件名 指定文件从暂存区返回工作区
  * git reset HEAD . 所有文件从暂存区返回工作区
+ * git checkout -- 文件名 （工作区内容还原到版本库内容）
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
@@ -28,3 +29,4 @@ box.onmousedown = function(ev){
 		document.onmousemove = document.onmouseup = null;
 	}
 }
+//面向对象
