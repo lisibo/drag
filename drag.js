@@ -22,7 +22,8 @@
  * git reflog 查看所有未来的commit号，可以通过 git reset --hard +(commit号) 回到新版本
  * git remote 查询远程仓库的名字（默认origin）
  * git remote add 修改远程仓库的名字
- * 
+ * git remote -v 查看远程仓库网址
+ * git push （远程仓库名字/origin） （哪个分支/master）从本地上传到github网站
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
