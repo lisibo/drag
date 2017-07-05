@@ -57,7 +57,8 @@
  * git branch -D (分支名) 强制删除指定分支
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
- git diff master 工作区与版本库对比
+ git diff master 工作区与版本库对比12345
+ 12345
  * */
 //面向过程
 var box = document.getElementById('box');
