@@ -32,8 +32,19 @@
  * git diff master origin/master 查看冲突
  * git merge origin/master 手动解决冲突
  * (自动解决pull方法)
+ * git pull 同步远程仓库 本地没有修改，直接合并github远程仓库上的代码，如果修改会有冲突选择。
  * git commit -a -m "注释" 提交版本库
  * git push origin master 上传远程仓库
+ * (开源项目协作)
+ * 1.找到项目 fork 完全镜像一个版本
+ * 2.打开git git clone 镜像的地址到本地
+ * 3.修改后，(git commit -a -m “”)提交处理。同步到github上(git push origin master)
+ * 4.pull request => new pull request => 选择合并的请求方案 => create pull request => 留言 =>create pull request => 引用对方说的话选中 + r(私聊)
+ * (分支操作)
+ * git branch 查看分支
+ * git branch (分支名) 新建分支名 指针不同步
+ * git checkout (分支名) 指针指向分支
+ * git checkout -b (分支名) 创建并且指针指向新分支
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
