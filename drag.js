@@ -45,6 +45,10 @@
  * git branch (分支名) 新建分支名 指针不同步
  * git checkout (分支名) 指针指向分支
  * git checkout -b (分支名) 创建并且指针指向新分支
+ * (分支上内容如何合并到主分支)
+ * (new1分支) git commit -a -m "" 添加到new1分支版本库
+ * git checkout master (切换到主分支master)
+ * git merge +(需要合并的分支名)  master指针指向分支
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
