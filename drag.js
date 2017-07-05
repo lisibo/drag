@@ -39,4 +39,3 @@ box.onmousedown = function(ev){
 		document.onmousemove = document.onmouseup = null;
 	}
 }
-//面向对象
