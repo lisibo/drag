@@ -11,6 +11,7 @@
  * git reset HEAD +文件名 指定文件从暂存区返回工作区
  * git reset HEAD . 所有文件从暂存区返回工作区
  * git checkout -- 文件名 （工作区内容依次从暂存区还原内容，暂存区没有内容直接还原版本区内容）
+ * git rm +文件名 可以把暂存区的文件删除（工作区有这个文件则删除不掉）
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
