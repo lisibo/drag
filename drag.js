@@ -7,6 +7,7 @@
  * git add +文件名 指定文件上传至暂存区
  * git add . 所有文件上传暂存区
  * git commit -m "注释" （暂存区提交到版本库）
+ * git commit （文件名） -m "注释" （暂存区提交到版本库）
  * git commit -a -m “注释” 工作区上传的版本库
  * git reset HEAD +文件名 指定文件从暂存区返回工作区
  * git reset HEAD . 所有文件从暂存区返回工作区
