@@ -57,6 +57,11 @@
  * git branch --no-merged 当前的分支没有合并的分支
  * git branch -d (分支名) 删除与master合并的指定分支
  * git branch -D (分支名) 强制删除指定分支
+ * (打标签)
+ * 1.先提交
+ * 2.git tag 查看标签
+ * 3.git tag v1.0 打出v1.0版本
+ * 4.git push origin v1.0
  git diff 工作区与暂存区对比
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
@@ -75,4 +80,5 @@ box.onmousedown = function(ev){
 	document.onmouseup = function(){
 		document.onmousemove = document.onmouseup = null;
 	}
+	return false;
 }
