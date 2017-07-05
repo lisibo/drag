@@ -49,6 +49,7 @@
  * (new1分支) git commit -a -m "" 添加到new1分支版本库
  * git checkout master (切换到主分支master)
  * git merge +(需要合并的分支名)  master指针指向分支
+ * (查看分支)
  * git branch --merged 当前的分支所合并的分支
  * git branch --no-merged 当前的分支没有合并的分支
  * git branch -d (分支名) 删除与master合并的指定分支
