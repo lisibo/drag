@@ -66,19 +66,90 @@
  dit diff --cached 暂存区与版本库对比
  git diff master 工作区与版本库对比
  * */
+
 //面向过程
-var box = document.getElementById('box');
-box.onmousedown = function(ev){
-	var ev = ev||event;
-	var disX = ev.clientX - box.offsetLeft;
-	var disY = ev.clientY - box.offsetTop;
-	document.onmousemove = function(ev){
+
+var box1 = document.getElementById('box1');
+var box2 = document.getElementById('box2');
+function drag(obj){
+	obj.onmousedown = function(ev){
 		var ev = ev||event;
-		box.style.left = ev.clientX - disX + 'px';
-		box.style.top = ev.clientY - disY + 'px';
+		var disX = ev.clientX - obj.offsetLeft;
+		var disY = ev.clientY - obj.offsetTop;
+		document.onmousemove = function(ev){
+			var ev = ev||event;
+			obj.style.left = ev.clientX - disX + 'px';
+			obj.style.top = ev.clientY - disY + 'px';
+		}
+		document.onmouseup = function(){
+			document.onmousemove = document.onmouseup = null;
+		}
+		return false;
 	}
-	document.onmouseup = function(){
-		document.onmousemove = document.onmouseup = null;
-	}
-	return false;
 }
+drag(box1);
+drag(box2);
+
+//面向对象
+
+/*function drag(id){
+	this.box = document.getElementById(id);
+	this.disX = 0;
+	this.disY = 0;
+	this.init();
+}
+drag.prototype.init = function(){
+	let _this = this;
+	this.box.addEventListener('mousedown',function(ev){
+		_this.down(ev);
+	})
+}
+drag.prototype.down = function(ev){
+	this.disX = ev.pageX - this.box.offsetLeft;
+	this.disY = ev.pageY - this.box.offsetTop;
+	let _this = this;
+	const fnMove = function(ev){
+		_this.move(ev);
+	}
+	const fnUp = function(ev){
+		_this.up(ev,fnMove,fnUp);
+	}
+	document.addEventListener('mousemove',fnMove);
+	document.addEventListener('mouseup',fnUp);
+	ev.preventDefault();
+}
+drag.prototype.move = function(ev){
+	this.box.style.left = ev.pageX - this.disX + 'px'; 
+	this.box.style.top = ev.pageY - this.disY + 'px'; 
+}
+drag.prototype.up = function(ev,move,up){
+	document.removeEventListener('mousemove',move);	
+	document.removeEventListener('mousemove',up);
+}
+//继承
+function drag2(id){
+	drag.call(this,id);
+	this.init();
+}
+for(var attr in drag.prototype){
+	//当是父类自身的属性才赋值
+	if(drag.prototype.hasOwnProperty(attr)){
+		drag2.prototype[attr] = drag.prototype[attr];	
+	}
+}
+drag2.prototype.move = function(ev){
+	let l = ev.pageX - this.disX;
+ 	let t = ev.pageY - this.disY;
+ 	//不能移出可视区
+ 	if(l < 10){
+ 		l = 0;
+ 	}else if(l > window.innerWidth - this.box.offsetWidth){
+ 		l = window.innerWidth - this.box.offsetWidth;
+ 	}
+ 	this.box.style.left = l + 'px'; 
+	this.box.style.top = t  + 'px';
+}
+var d1 = new drag('box1');
+var d2 = new drag2('box2');*/
+
+
