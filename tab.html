@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box span,#box2 span{
+				display:inline-block;
+				width: 100px;
+				height: 20px;
+				background: #999999;
+				text-align: center;
+			}
+			#box div,#box2 div{
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+				text-align: center;
+				line-height: 300px;
+				margin-bottom: 10px;
+				display: none;
+			}
+			#box .active,#box2 .active{
+				display: block;
+			}
+			#box .yellow,#box2 .yellow{
+				border: 1px solid #000;
+				background: yellow;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<span class="yellow">按钮1</span>
+			<span>按钮2</span>
+			<span>按钮3</span>
+			<div class="active">1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+		<div id="box2">
+			<span class="yellow">按钮1</span>
+			<span>按钮2</span>
+			<span>按钮3</span>
+			<div class="active">1111</div>
+			<div>2222</div>
+			<div>3333</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// 面向过程
+		/*var box = document.getElementById('box');
+		var spans = box.getElementsByTagName('span');
+		var divs = box.getElementsByTagName('div');
+		let o = Array.from(divs);//类数组转数组
+		console.log(Object.prototype.toString.call(o) === '[object Array]');//判断是不是数组
+		for(var i=0;i<spans.length;i++){
+			spans[i].index = i;
+			spans[i].onclick = function(){
+				for(var i=0;i<spans.length;i++){
+					spans[i].className = '';
+					divs[i].className = '';
+				}
+				this.className = 'yellow';
+				divs[this.index].className = 'active';
+			}
+		}*/
+		
+		//面向对象
+		window.onload = function(){
+			var t1 = new tab('box');
+			t1.init();
+			t1.autoplay();
+			
+			var t2 = new tab('box2');
+			t2.init();
+		}
+		
+		function tab(id){
+			this.box = document.getElementById(id);
+			this.spans = this.box.getElementsByTagName('span');
+			this.divs = this.box.getElementsByTagName('div');
+			this.inow = 0;
+		}
+		
+		tab.prototype.init = function(){
+			var _this = this;
+			for(let i=0;i<this.spans.length;i++){
+				this.spans[i].index = i; 
+				this.spans[i].onclick = function(){
+					_this.change(this);
+				}
+			}
+		}
+		
+		tab.prototype.change = function(that){
+			for(let i=0;i<this.spans.length;i++){
+				this.spans[i].className = '';
+				this.divs[i].className = '';
+			}
+			that.className = 'yellow';
+			this.divs[that.index].className = 'active';
+		}
+		
+		tab.prototype.autoplay = function(that){
+			var This = this;
+			setInterval(function(){
+				if(This.inow == This.spans.length-1){
+					This.inow = 0;
+				}else{
+					This.inow++;
+				}
+				for(var i=0;i<This.spans.length;i++){
+					This.spans[i].className = '';
+					This.divs[i].className = '';
+				}
+				This.spans[This.inow].className = 'yellow';
+				This.divs[This.inow].className = 'active';
+			},1000)
+		}
+		
+	</script>
+</html>
