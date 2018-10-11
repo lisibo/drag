@@ -1,4 +1,4 @@
-/*
+﻿/*
  * git config user.name 设置用户名
  * git config user.email 设置邮箱
  * git config --global user.name "" 设置全局用户名
@@ -153,4 +153,3 @@ var d1 = new drag('box1');
 var d2 = new drag2('box2');*/
 
 
-console.log(123)
