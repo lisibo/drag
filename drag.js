@@ -152,4 +152,3 @@ drag2.prototype.move = function(ev){
 var d1 = new drag('box1');
 var d2 = new drag2('box2');*/
 
-console.log(12345)
